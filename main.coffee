@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import './style.scss'
 
@@ -26,7 +26,7 @@ App = () ->
 
   executeCode = (script) ->
     try
-      CoffeeScript.run script or code
+      CoffeeScript.run BOILERPLATE + "\n" + (script or code)
     catch error
       setLog error.toString()
 
@@ -44,7 +44,7 @@ App = () ->
 
     editor.on "change", () ->
       value = editor.getValue()
-      setCode BOILERPLATE + "\n" + value
+      setCode value
   , []
 
   <div className={"main"}>
