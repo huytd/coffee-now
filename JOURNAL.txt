@@ -1,0 +1,51 @@
+Why am I building this?
+
+    I need a minimalism CoffeeScript playground that can execute code directly on the browser,
+    no need to send it to some sort of server like most of the other playground does.
+
+    Also, it should works well with the editing experience on mobile devices, like, holding the
+    space bar on iOS will enable cursor mode, some playgrounds like REPL.it doesn't support this.
+
+Roadmap
+
+    - Get the barebone working, we should be able to type in the code and execute, see the output
+    - Share the code via a sharable URL
+    ? Auto-Complete, Linting, LSP integration
+    ? Save to Gist or Dropbox
+    ? Personal snippet gallery
+
+Jan 13, 2020 13:00
+
+    The first prototype work, I can import CoffeeScript's JS files and run it here by calling
+    either CoffeeScript.run or CoffeeScript.runScripts methods, and hook up the console.log
+    event to print it out on the screen.
+
+    Time to integrate some real editor experience. CodeMirror seems to be the candidate!
+
+Jan 13, 2020 14:30
+
+    Interesting stuff about closure and React's useEffect hook.
+    I was trying to get the Ctrl-Enter key working with CodeMirror by doing something like this:
+
+    [state, setState] = useState(...)
+
+    executeCode = () ->
+        something using the state
+
+    useEffect () ->
+        CodeMirror.fromTextArea(
+            ...,
+            extraKeys: {
+                'Ctrl-Enter': () -> executeCode()
+            }
+        ...
+
+    And it's not working. Turned out, the reason it's not working is, the value of the state we're
+    using inside executeCode was the initial value when we created the component, it's not updating.
+
+    We need to re-run the effect in order to get the new value of the state in this scope, which is
+    something I do not want. I just too lazy to deal with all of the CodeMirror stuff here when the
+    effect re-run.
+
+    Luckily, we can use getValue() method of CodeMirror to get the updated value, but I am aware that
+    this is not a good solution in React way. I just lazy.
