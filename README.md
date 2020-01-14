@@ -37,7 +37,7 @@ $ now
 # Why am I building this?
 
 During my parental leave, I found myself solving programming challenges for fun on my phone on and off, because you can't just
-sitting at a laptop when you a baby just waiting to cry every random hours for every random reason.
+sitting at a laptop when there's a baby just waiting to cry every random hours for every random reason.
 
 Most of the coding playground I can find online are just sucks, they either breaking the editing experience on the mobile
 or behave badly on small screen devices. Also, they send the code to a remote server to execute it before showing you the
