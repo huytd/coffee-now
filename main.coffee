@@ -36,6 +36,10 @@ App = () ->
           executeCode editor.getValue()
         'Cmd-Enter': () ->
           executeCode editor.getValue()
+        'Ctrl-S': () ->
+          shareCode()
+        'Cmd-S': () ->
+          shareCode()
       }
     })
 
