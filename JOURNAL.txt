@@ -8,8 +8,8 @@ Why am I building this?
 
 Roadmap
 
-    - Get the barebone working, we should be able to type in the code and execute, see the output
-    - Share the code via a sharable URL
+    ✓ Get the barebone working, we should be able to type in the code and execute, see the output
+    ✓ Share the code via a sharable URL
     ? Auto-Complete, Linting, LSP integration
     ? Save to Gist or Dropbox
     ? Personal snippet gallery
@@ -49,3 +49,8 @@ Jan 13, 2020 14:30
 
     Luckily, we can use getValue() method of CodeMirror to get the updated value, but I am aware that
     this is not a good solution in React way. I just lazy.
+
+Jan 13, 2020 16:45
+
+    Now we have the share function running. User can click Share button and the page URL will be filled
+    with code, then she can just copy the URL and send it to her friends.
