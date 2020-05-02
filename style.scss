@@ -57,12 +57,23 @@ html {
     display: flex;
     flex-direction: column;
 
-    .CodeMirror {
+    .editor-zone {
       flex: 1;
-      margin: 0;
-      padding: 0;
-      border: none;
-      resize: none;
+      display: flex;
+      flex-direction: row;
+
+      .CodeMirror {
+        height: 100%;
+        flex: 1;
+        margin: 0;
+        padding: 0;
+        border: none;
+        resize: none;
+
+        &:last-child {
+          background: #fafafa;
+        }
+      }
     }
 
     .debugger {
